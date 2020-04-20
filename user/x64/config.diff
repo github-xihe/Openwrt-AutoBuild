@@ -4634,6 +4634,7 @@ CONFIG_PACKAGE_luci-theme-bootstrap=y
 CONFIG_PACKAGE_luci-theme-bootstrap-mod=m
 CONFIG_PACKAGE_luci-theme-material=m
 CONFIG_PACKAGE_luci-theme-netgear=m
+CONFIG_PACKAGE_luci-theme-atmaterial=m
 
 #
 # 5. Protocols

@@ -139,7 +139,8 @@ jobs:
         git add .
         git commit -m "$DATE"
         git push --force --quiet https://$SUPER_TOKEN@github.com/hyird/Openwrt-AutoBuild.git  HEAD:${{matrix.target}}_packages
-        rm -rf .git 
+        rm -rf .git
+        tar -cvf  ${{matrix.target}}_packages.tar ./
     - name:  Push targets
       env:
        SUPER_TOKEN: ${{ secrets.SUPER_TOKEN }}
@@ -152,6 +153,27 @@ jobs:
         git commit -m "$DATE"
         git push --force --quiet https://$SUPER_TOKEN@github.com/hyird/Openwrt-AutoBuild.git  HEAD:${{matrix.target}}_targets
         rm -rf .git
+        tar -cvf  ${{matrix.target}}_targets.tar ./
+
+    - name: Upload Packages to release
+      uses: svenstaro/upload-release-action@v1-release
+      with:
+        repo_token: ${{ secrets.SUPER_TOKEN }}
+        file: openwrt/bin/packages/${{matrix.target}}_packages.tar
+        asset_name: ${{matrix.target}}_packages
+        tag: $date
+        overwrite: true
+
+    - name: Upload Targets to release
+      uses: svenstaro/upload-release-action@v1-release
+      with:
+        repo_token: ${{ secrets.SUPER_TOKEN }}
+        file: openwrt/bin/targets/${{matrix.target}}_targets.tar
+        asset_name: ${{matrix.target}}_targets
+        tag: $date
+        overwrite: true
+
+
         
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=${{matrix.target}}编译完成

@@ -1,4 +1,4 @@
---- feeds.conf.default	2020-04-02 11:23:50.409123900 +0800	@@ -1,5 +1,5 @@
+--- feeds.conf.default	2020-04-02 11:23:50.409123900 +0800
 +++ feeds.conf.default	2020-04-02 11:24:32.098626900 +0800
 @@ -1,5 +1,5 @@
  src-git packages https://github.com/coolsnowwolf/packages

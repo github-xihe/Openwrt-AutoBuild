@@ -170,7 +170,7 @@ jobs:
         repo_token: ${{ secrets.SUPER_TOKEN }}
         file: openwrt/bin/targets/${{matrix.target}}_targets.tar
         asset_name: ${{matrix.target}}_targets.tar
-        tag: ${{env.date}}
+        tag: ${{env.DATE}}
         overwrite: true
 
 

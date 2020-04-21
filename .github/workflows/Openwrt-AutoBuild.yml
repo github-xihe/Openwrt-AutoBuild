@@ -161,7 +161,7 @@ jobs:
         repo_token: ${{ secrets.SUPER_TOKEN }}
         file: openwrt/bin/packages/${{matrix.target}}_packages.tar
         asset_name: ${{matrix.target}}_packages
-        tag: $date
+        tag: ${{env.date}}
         overwrite: true
 
     - name: Upload Targets to release
@@ -170,7 +170,7 @@ jobs:
         repo_token: ${{ secrets.SUPER_TOKEN }}
         file: openwrt/bin/targets/${{matrix.target}}_targets.tar
         asset_name: ${{matrix.target}}_targets
-        tag: $date
+        tag: ${{env.date}}
         overwrite: true
 
 

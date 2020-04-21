@@ -160,7 +160,7 @@ jobs:
       with:
         repo_token: ${{ secrets.SUPER_TOKEN }}
         file: openwrt/bin/packages/${{matrix.target}}_packages.tar
-        asset_name: ${{matrix.target}}_packages
+        asset_name: ${{matrix.target}}_packages.tar
         tag: ${{env.date}}
         overwrite: true
 
@@ -169,7 +169,7 @@ jobs:
       with:
         repo_token: ${{ secrets.SUPER_TOKEN }}
         file: openwrt/bin/targets/${{matrix.target}}_targets.tar
-        asset_name: ${{matrix.target}}_targets
+        asset_name: ${{matrix.target}}_targets.tar
         tag: ${{env.date}}
         overwrite: true
 

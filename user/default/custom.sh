@@ -17,4 +17,5 @@ sed  -i '/^sed.*shadow$/d'  package/lean/default-settings/files/zzz-default-sett
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/Mrbai98/luci-theme-atmaterial.git package/luci-theme-atmaterial
+git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
  
